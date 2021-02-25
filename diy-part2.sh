@@ -40,6 +40,6 @@ popd
 #git clone https://github.com/kenzok8/openwrt-packages
 
 #修改闪存为32m
-sed -i 's?define Device/youhua_wr1200js\r  IMAGE_SIZE := 16064k?define Device/youhua_wr1200js\r  IMAGE_SIZE := 32128k?g' /target/linux/ramips/image/mt7621.mk
+sed -i 's?define Device/youhua_wr1200js  IMAGE_SIZE := 16064k?define Device/youhua_wr1200js  IMAGE_SIZE := 32128k?g' /target/linux/ramips/image/mt7621.mk
 sed -i 's?0xfb0000?0x1fb0000?g' /target/linux/ramips/dts/mt7621_youhua_wr1200js.dts
 
