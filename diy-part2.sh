@@ -12,7 +12,6 @@
 
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
-git clone https://github.com/kenzok8/openwrt-packages.git
 
 # 获取luci-app-diskman和依赖
 mkdir -p package/diy-packages/luci-app-diskman && \
@@ -25,7 +24,7 @@ git clone https://github.com/jerrykuku/lua-maxminddb package/diy-packages/hellow
 git clone https://github.com/jerrykuku/luci-app-vssr package/diy-packages/helloworld/luci-app-vssr
 
 # 获取ssr-plus
-git clone https://github.com/kenzok8/openwrt-packages package/luci-app-ssr-plus
+#git clone https://github.com/kenzok8/openwrt-packages package/luci-app-ssr-plus
 
 # 清除默认主题
 sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
