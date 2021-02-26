@@ -13,19 +13,13 @@
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 
-# 获取luci-app-diskman和依赖
-#mkdir -p package/diy-packages/luci-app-diskman && \
-#mkdir -p package/diy-packages/parted && \
-#wget https://raw.githubusercontent.com/lisaac/luci-app-diskman/master/Makefile -O package/diy-packages/luci-app-diskman/Makefile
-#wget https://raw.githubusercontent.com/lisaac/luci-app-diskman/master/Parted.Makefile -O package/diy-packages/parted/Makefile
-
 
 # 获取ssr-plus
-git clone https://github.com/kenzok8/openwrt-packages package/luci-app-ssr-plus
-git clone https://github.com/kenzok8/small package/xray-core
-git clone https://github.com/kenzok8/small package/xray-plugin
-git clone https://github.com/kenzok8/small package/simple-obfs
-git clone https://github.com/kenzok8/small package/v2ray-plugin
+#git clone https://github.com/kenzok8/openwrt-packages package/luci-app-ssr-plus
+#git clone https://github.com/kenzok8/small package/xray-core
+#git clone https://github.com/kenzok8/small package/xray-plugin
+#git clone https://github.com/kenzok8/small package/simple-obfs
+#git clone https://github.com/kenzok8/small package/v2ray-plugin
 
 
 
