@@ -21,9 +21,11 @@
 
 
 # 获取ssr-plus
-#git clone https://github.com/kenzok8/openwrt-packages package/luci-app-ssr-plus
-#git clone https://github.com/kenzok8/small package/xray-core
-
+git clone https://github.com/kenzok8/openwrt-packages package/luci-app-ssr-plus
+git clone https://github.com/kenzok8/small package/xray-core
+git clone https://github.com/kenzok8/small package/xray-plugin
+git clone https://github.com/kenzok8/small package/simple-obfs
+git clone https://github.com/kenzok8/small package/v2ray-plugin
 
 
 
