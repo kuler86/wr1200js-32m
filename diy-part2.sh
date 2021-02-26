@@ -23,9 +23,6 @@
 # 获取ssr-plus
 git clone https://github.com/kenzok8/openwrt-packages package/luci-app-ssr-plus
 
-# 获取bypass
-git clone https://github.com/kenzok8/openwrt-packages package/luci-app-bypass
-
 
 
 
@@ -39,8 +36,7 @@ git clone https://github.com/kenzok8/openwrt-packages package/luci-app-bypass
 #popd
 #=================================================
 
-# 拉取仓库
-#git clone https://github.com/kenzok8/openwrt-packages
+
 
 # 修改闪存为32m
 sed -i 's?define Device/youhua_wr1200js\r  IMAGE_SIZE := 16064k?define Device/youhua_wr1200js\r  IMAGE_SIZE := 32128k?g' target/linux/ramips/image/mt7621.mk
