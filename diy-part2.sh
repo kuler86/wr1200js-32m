@@ -26,6 +26,9 @@ git clone https://github.com/kenzok8/openwrt-packages package/luci-app-ssr-plus
 # 获取bypass
 git clone https://github.com/kenzok8/openwrt-packages package/luci-app-bypass
 
+
+
+
 # 清除默认主题
 #sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
 #=================================================
