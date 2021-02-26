@@ -22,6 +22,7 @@
 
 # 获取ssr-plus
 git clone https://github.com/kenzok8/openwrt-packages package/luci-app-ssr-plus
+git clone https://github.com/kenzok8/small package/xray-core
 
 
 
