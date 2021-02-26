@@ -19,27 +19,27 @@
 #wget https://raw.githubusercontent.com/lisaac/luci-app-diskman/master/Makefile -O package/diy-packages/luci-app-diskman/Makefile
 #wget https://raw.githubusercontent.com/lisaac/luci-app-diskman/master/Parted.Makefile -O package/diy-packages/parted/Makefile
 
-# 获取hello world和依赖
-#git clone https://github.com/jerrykuku/lua-maxminddb package/diy-packages/helloworld/lua-maxminddb
-#git clone https://github.com/jerrykuku/luci-app-vssr package/diy-packages/helloworld/luci-app-vssr
 
- 获取ssr-plus
+# 获取ssr-plus
 git clone https://github.com/kenzok8/openwrt-packages package/luci-app-ssr-plus
 
+# 获取bypass
+git clone https://github.com/kenzok8/openwrt-packages package/luci-app-bypass
+
 # 清除默认主题
-sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
+#sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
 #=================================================
 # 清除旧版argon主题并拉取最新版
-pushd package/lean
-rm -rf luci-theme-argon
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
-popd
+#pushd package/lean
+#rm -rf luci-theme-argon
+#git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
+#popd
 #=================================================
 
 # 拉取仓库
 #git clone https://github.com/kenzok8/openwrt-packages
 
-#修改闪存为32m
+# 修改闪存为32m
 sed -i 's?define Device/youhua_wr1200js\r  IMAGE_SIZE := 16064k?define Device/youhua_wr1200js\r  IMAGE_SIZE := 32128k?g' target/linux/ramips/image/mt7621.mk
 sed -i 's?0xfb0000?0x1fb0000?g' target/linux/ramips/dts/mt7621_youhua_wr1200js.dts
 
