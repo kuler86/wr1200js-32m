@@ -14,15 +14,6 @@
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 
 
-# 获取ssr-plus
-#git clone https://github.com/kenzok8/openwrt-packages package/luci-app-ssr-plus
-#git clone https://github.com/kenzok8/small package/xray-core
-#git clone https://github.com/kenzok8/small package/xray-plugin
-#git clone https://github.com/kenzok8/small package/simple-obfs
-#git clone https://github.com/kenzok8/small package/v2ray-plugin
-
-
-
 # 清除默认主题
 #sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
 #=================================================
