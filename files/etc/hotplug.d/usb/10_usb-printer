@@ -1,0 +1,43 @@
+et -e
+
+# change this to the location where you put the .dl file:
+FIRMWARE=/etc/sihp1020.dl
+DEVICE=/dev/usb/lp0
+LOGFILE=/tmp/hp1020
+
+# if [ "$PRODUCT" = "3f0/2b17/100"  -a "$DEVTYPE" = "usb_interface" ]
+if [ "$PRODUCT" = "3f0/2b17/100" ]; then
+	case "$ACTION" in
+		add)
+			# /etc/init.d/p910nd stop
+			echo "`date '+%Y-%m-%d %H:%M:%S'`: HP LaserJet 1020 added" >> $LOGFILE
+			# /etc/init.d/p910nd start >> /tmp/hp1007
+			echo "`date '+%Y-%m-%d %H:%M:%S'`: STARTING" >> $LOGFILE
+			for i in $(seq 30); do
+				echo "`date '+%Y-%m-%d %H:%M:%S'`: Attempt Number $i on $DEVICE" >> $LOGFILE
+				if [ -c $DEVICE ]; then
+					echo "`date '+%Y-%m-%d %H:%M:%S'`: Device $DEVICE found" >> $LOGFILE
+					if [ -z "`usb_printerid $DEVICE | grep FWVER`" ]; then
+						echo "`date '+%Y-%m-%d %H:%M:%S'`: No firmware found on $DEVICE" >> $LOGFILE
+						echo "`date '+%Y-%m-%d %H:%M:%S'`: Sending firmware to printer..." >> $LOGFILE
+						cat $FIRMWARE > $DEVICE
+						echo "`date '+%Y-%m-%d %H:%M:%S'`: Done" >> $LOGFILE
+					else
+						echo "`date '+%Y-%m-%d %H:%M:%S'`: Firmware already there on $DEVICE" >> $LOGFILE
+					fi
+					echo "`date '+%Y-%m-%d %H:%M:%S'`: EXITING" >> $LOGFILE
+					exit
+				fi
+				sleep 1
+			done
+			echo "`date '+%Y-%m-%d %H:%M:%S'`: Done" >> $LOGFILE
+			;;
+		remove)
+			echo "`date '+%Y-%m-%d %H:%M:%S'`: HP LaserJet 1020 removed" >> $LOGFILE
+			# /etc/init.d/p910nd stop >> /tmp/hp1007
+			echo "`date '+%Y-%m-%d %H:%M:%S'`: Done" >> $LOGFILE
+			;;
+	esac
+fi
+
+
